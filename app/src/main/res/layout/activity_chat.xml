@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightGrey"
+    android:fitsSystemWindows="true"
+    tools:context=".chat.ChatActivity">
+
+    <include
+        android:id="@+id/nameToolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/msg_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@id/nameToolbar"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        >
+
+        <EditText
+            android:id="@+id/text_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/round_edittext"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:hint="Type a message..." />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/text_send"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="sendMessage"
+            android:padding="10dp"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_right_arrow"/>
+
+    </LinearLayout>
+</RelativeLayout>
+
